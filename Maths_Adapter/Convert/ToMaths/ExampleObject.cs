@@ -20,7 +20,7 @@
  * along with this code. If not, see <https://www.gnu.org/licenses/lgpl-3.0.html>.      
  */
 
-using BH.oM.Adapters.SoftwareName;
+using BH.oM.Adapters.Maths;
 using BH.oM.Base;
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BH.Adapter.SoftwareName
+namespace BH.Adapter.Maths
 {
     public static partial class Convert
     {
@@ -38,7 +38,7 @@ namespace BH.Adapter.SoftwareName
 
         // Add methods for converting from BHoM to the specific software types
         // Example:
-        public static ExampleObject ToSoftwareName(this BHoMObject node)
+        public static ExampleObject ToMaths(this BHoMObject node)
         {
             //Insert code for convertion
             throw new NotImplementedException();

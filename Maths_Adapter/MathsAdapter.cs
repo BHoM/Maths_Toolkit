@@ -29,17 +29,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BH.Adapter.SoftwareName
+namespace BH.Adapter.Maths
 {
-    public partial class SoftwareNameAdapter : BHoMAdapter
+    public partial class MathsAdapter : BHoMAdapter
     {
         /***************************************************/
         /**** Constructors                              ****/
         /***************************************************/
 
-        [Description("Adapter for SoftwareName.")]
-        [Output("The created SoftwareName adapter.")]
-        public SoftwareNameAdapter()
+        [Description("Adapter for Maths.")]
+        [Output("The created Maths adapter.")]
+        public MathsAdapter()
         {
             // The Adapter constructor can be used to configure the Adapter behaviour.
             // For example:

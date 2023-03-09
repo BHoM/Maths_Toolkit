@@ -20,31 +20,34 @@
  * along with this code. If not, see <https://www.gnu.org/licenses/lgpl-3.0.html>.      
  */
 
-using BH.oM.Adapters.SoftwareName;
 using BH.oM.Base;
+using BH.oM.Base.Attributes;
+using BH.oM.Adapters.Maths;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BH.Adapter.SoftwareName
+namespace BH.Engine.Adapters.Maths
 {
-    public static partial class Convert
+    public static partial class Modify
     {
         /***************************************************/
         /**** Public Methods                            ****/
         /***************************************************/
 
-        // Add methods for converting to BHoM from the specific software types. 
-        // Example:
-        public static BHoMObject FromSoftwareName(this ExampleObject node)
+        [Description("Description of the method. Will appear in the UI tooltip.")]
+        [Input("objectToModify", "Description of the input. Will appear in the UI tooltip.")]
+        [Output("outputName", "Description of the output. Will appear in the UI tooltip.")]
+        public static ExampleObject ExampleCreateMethod(ExampleObject objectToModify)
         {
-            //Insert code for convertion
+            // This method will appear in every UI (e.g. Grasshopper) as a component.
+            // Find it using the CTRL+Shift+B search bar, or by navigating the `Create` component (Engine tab) right click menu.
             throw new NotImplementedException();
         }
 
         /***************************************************/
+
     }
 }
 
