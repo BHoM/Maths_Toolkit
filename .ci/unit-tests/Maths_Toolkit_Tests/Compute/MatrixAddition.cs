@@ -32,7 +32,7 @@ namespace BH.Tests.Maths
             Matrix leftMatrix = new Matrix() { Values = matrixValues };
             Matrix rightMatrix = new Matrix() { Values = matrixValues };
 
-            Matrix result = leftMatrix.Addtion(rightMatrix);
+            Matrix result = leftMatrix.Addition(rightMatrix);
 
             result.ShouldNotBe(null);
 
@@ -82,7 +82,7 @@ namespace BH.Tests.Maths
             rightMatrixValues.Add(new List<double>() { 100, 843, 453 });
             Matrix rightMatrix = new Matrix() { Values = rightMatrixValues };
 
-            Matrix result = leftMatrix.Addtion(rightMatrix);
+            Matrix result = leftMatrix.Addition(rightMatrix);
 
             result.ShouldNotBe(null);
 
@@ -134,7 +134,7 @@ namespace BH.Tests.Maths
             rightMatrixValues.Add(new List<double>() { rand.Next(0, 1000), rand.Next(0, 1000), rand.Next(0, 1000) });
             Matrix rightMatrix = new Matrix() { Values = rightMatrixValues };
 
-            Matrix result = leftMatrix.Addtion(rightMatrix);
+            Matrix result = leftMatrix.Addition(rightMatrix);
 
             result.ShouldNotBe(null);
 
@@ -183,7 +183,7 @@ namespace BH.Tests.Maths
             rightMatrixValues.Add(new List<double>() { 98, 354, 874 });
             Matrix rightMatrix = new Matrix() { Values = rightMatrixValues };
 
-            Matrix result = leftMatrix.Addtion(rightMatrix);
+            Matrix result = leftMatrix.Addition(rightMatrix);
 
             result.ShouldBe(null);
 
@@ -208,7 +208,7 @@ namespace BH.Tests.Maths
             rightMatrixValues.Add(new List<double>() { 98, 354, 874 });
             Matrix rightMatrix = new Matrix() { Values = rightMatrixValues };
 
-            Matrix result = leftMatrix.Addtion(rightMatrix);
+            Matrix result = leftMatrix.Addition(rightMatrix);
 
             result.ShouldBe(null);
 

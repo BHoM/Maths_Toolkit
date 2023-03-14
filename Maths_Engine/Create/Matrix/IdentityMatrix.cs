@@ -37,26 +37,6 @@ namespace BH.Engine.Maths
 
         [Description("Creates an empty matrix")]
         [Input("size", "Integer greater than or equal to 1.")]
-        [Output("EmptyMatrix", "Factorial of the integer")]
-        public static Matrix NullMatrix(this int size)
-        {
-            Matrix id = new Matrix();
-
-            for (int i = 0; i < size; i++)
-            {
-                List<double> row = new List<double>();
-                for (int j = 0; j < size; j++)
-                {
-                    row.Add(0);
-                }
-                id.Values.Add(row);
-            }
-
-            return id;
-        }
-
-        [Description("Creates an empty matrix")]
-        [Input("size", "Integer greater than or equal to 1.")]
         [Output("IdentityMatrix", "IdentityMatrix")]
         public static Matrix IdentityMatrix(this int size)
         {

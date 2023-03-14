@@ -39,7 +39,7 @@ namespace BH.Engine.Maths
         public static bool CompareElements(this Matrix m1, Matrix m2)
         {
             //Change this!
-            if ((MatrizSizeColoumns(m2) == MatrizSizeColoumns(m1)) && (MatrizSizeRows(m1) == MatrizSizeRows(m2)))
+            if ((MatrixSizeColumns(m2) == MatrixSizeColumns(m1)) && (MatrixSizeRows(m1) == MatrixSizeRows(m2)))
             {
                 return true;
             }

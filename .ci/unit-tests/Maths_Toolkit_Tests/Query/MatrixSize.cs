@@ -28,7 +28,7 @@ namespace BH.Tests.Maths
             Matrix matrix = new Matrix();
             matrix.Values = values;
 
-            int cols = matrix.MatrixNumberOfColumns();
+            int cols = matrix.MatrixSizeColumns();
             cols.ShouldBe(3);
 
             Random rand = new Random();
@@ -37,7 +37,7 @@ namespace BH.Tests.Maths
                 values[0].Add((double)x);
 
             matrix.Values = values;
-            cols = matrix.MatrixNumberOfColumns();
+            cols = matrix.MatrixSizeColumns();
             cols.ShouldBe(values[0].Count);
         }
 
@@ -51,7 +51,7 @@ namespace BH.Tests.Maths
             Matrix matrix = new Matrix();
             matrix.Values = values;
 
-            int rows = matrix.MatrixNumberOfRows();
+            int rows = matrix.MatrixSizeRows();
             rows.ShouldBe(2);
 
             Random rand = new Random();
@@ -60,7 +60,7 @@ namespace BH.Tests.Maths
                 values.Add(new List<double>() { 1, 2, 3 });
 
             matrix.Values = values;
-            rows = matrix.MatrixNumberOfRows();
+            rows = matrix.MatrixSizeRows();
             rows.ShouldBe(values.Count);
         }
 
