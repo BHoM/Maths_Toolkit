@@ -35,44 +35,18 @@ namespace BH.Engine.Maths
     {
         [Description("Returns the number of coloumns in a matrix")]
         [Input("Matrix", "A Matrix")]
-        [MultiOutput(0,"n", "The number of coloumns in a matrix")]
-        [MultiOutput(1,"m", "The number of rows in a matrix")]
-        public static Output<int,int> MatrixSize(this Matrix mat)
-        {
-            Output<int, int> output = new Output<int,int>();
-
-            output.Item1 = MatrixNumberOfColumns(mat);
-            output.Item2 = MatrixNumberOfRows(mat);
-
-            return output;
-        }
-
-        [Description("Returns the number of coloumns in a matrix")]
-        [Input("Matrix", "A Matrix")]
         [Output("Coloumns", "The number of coloumns in a matrix")]
-        public static int MatrixNumberOfRows(this Matrix mat)
+        public static bool CompareElements(this Matrix M1, Matrix M2)
         {
-            if (mat.IsValid() == false)
+            //Change this!
+            if ((MatrixNumberOfColumns(M2) == MatrixNumberOfColumns(M1)) && (MatrixNumberOfRows(M1) == MatrixNumberOfRows(M2)))
             {
-                BH.Engine.Base.Compute.RecordError("This is not a valid matrix.");
-                return -1;
+                return true;
             }
-            int cols = mat.Values[0].Count();
-            return cols;
-        }
-
-        [Description("Returns the number of coloumns in a matrix")]
-        [Input("Matrix", "A Matrix")]
-        [Output("Rows", "The number of coloumns in a matrix")]
-        public static int MatrixNumberOfColumns(this Matrix mat)
-        {
-            if (mat.IsValid() == false)
+            else
             {
-                BH.Engine.Base.Compute.RecordError("This is not a valid matrix.");
-                return -1;
+                return false;
             }
-            int rows = mat.Values.Count();
-            return rows;
         }
 
     }

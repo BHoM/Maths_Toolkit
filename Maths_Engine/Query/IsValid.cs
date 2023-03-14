@@ -20,6 +20,7 @@
  * along with this code. If not, see <https://www.gnu.org/licenses/lgpl-3.0.html>.      
  */
 
+using BH.Engine.Base;
 using BH.oM.Base;
 using BH.oM.Base.Attributes;
 using BH.oM.Maths;
@@ -33,20 +34,30 @@ namespace BH.Engine.Maths
 {
     public static partial class Query
     {
-        [Description("Returns the number of coloumns in a matrix")]
+        [Description("Checks if the matrix is valid")]
         [Input("Matrix", "A Matrix")]
-        [Output("Coloumns", "The number of coloumns in a matrix")]
-        public static bool IsAddable(this Matrix M1, Matrix M2)
+        [Output("IsValid", "The number of coloumns in a matrix")]
+        public static bool IsValid(this Matrix mat)
         {
-            //Change this!
-            if ((MatrixNumberOfColumns(M2) == MatrixNumberOfColumns(M1)) && (MatrixNumberOfRows(M1) == MatrixNumberOfRows(M2)))
+            if (mat.Values == null && mat.Values.Count() == 0)
             {
-                return true;
-            }
-            else
-            {
+                BH.Engine.Base.Compute.RecordError("This is a null matrix.");
                 return false;
             }
+
+            int length = mat.Values[0].Count;
+
+            foreach (List<double> row in mat.Values)
+            {
+                if (row.Count != length) 
+                {
+                    BH.Engine.Base.Compute.RecordError("This is not a valid matrix.");
+                    return false;
+                }
+            }
+            
+            return true;
+
         }
 
     }
