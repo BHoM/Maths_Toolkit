@@ -38,9 +38,9 @@ namespace BH.Engine.Maths
         [Description("Computes the factorial of an integer accurately up until 170 where it will overflow.")]
         [Input("Int", "Integer greater than or equal to 1.")]
         [Output("Factorial", "Factorial of the integer")]
-        public static double MatrixAddtion(Matrix M1,Matrix M2)
+        public static double Addtion(this Matrix M1, Matrix M2)
         {
-            if (BH.Engine.Maths.Query.IsAddableMatrix(M1,M2) == false)
+            if (BH.Engine.Maths.Query.IsAddableMatrix(M1, M2) == false)
             {
                 BH.Engine.Base.Compute.RecordError("Number must be greater than or equal to 0.");
             }
