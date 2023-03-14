@@ -36,8 +36,9 @@ namespace BH.Engine.Maths
         [Description("Returns the number of coloumns in a matrix")]
         [Input("Matrix", "A Matrix")]
         [Output("Coloumns", "The number of coloumns in a matrix")]
-        public static bool IsAddableMatrix(this Matrix M1, Matrix M2)
+        public static bool IsAddable(this Matrix M1, Matrix M2)
         {
+            //Change this!
             if ((MatrixNumberOfColumns(M2) == MatrixNumberOfColumns(M1)) && (MatrixNumberOfRows(M1) == MatrixNumberOfRows(M2)))
             {
                 return true;
