@@ -53,7 +53,7 @@ namespace BH.Engine.Maths
                 List<double> currentRow = new List<double>();
                 for (int j = 0; j < M1.Values.Count(); j++)
                 {
-                    currentRow[j] = M1.Values[i][j] + M2.Values[i][j];
+                    currentRow.Add(M1.Values[i][j] + M2.Values[i][j]);
                 }
                 sum.Values.Add(currentRow);
             }
