@@ -20,38 +20,35 @@
  * along with this code. If not, see <https://www.gnu.org/licenses/lgpl-3.0.html>.      
  */
 
-using BH.oM.Adapters.Maths;
 using BH.oM.Base;
+
 using BH.oM.Base.Attributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using MathNet.Numerics;
 
-namespace BH.Engine.Adapters.Maths
+namespace BH.Engine.Maths
 {
-    public static partial class Query
+    public static partial class Compute
     {
-        /***************************************************/
-        /**** Public Methods                            ****/
-        /***************************************************/
 
-        [Description("Description of the method. Will appear in the UI tooltip.")]
-        [Input("exampleObject", "Description of the input. Will appear in the UI tooltip.")]
-        [Input("additionalInput", "Description of the input. Will appear in the UI tooltip.")]
-        [Output("outputName", "Description of the output. Will appear in the UI tooltip.")]
-        public static string ExampleQueryMethod(this ExampleObject exampleObject, string additionalInput = "")
+        [Description("Computes the factorial of an integer accurately up until 170 where it will overflow.")]
+        [Input("Int", "Integer greater than or equal to 1.")]
+        [Output("Factorial", "Factorial of the integer")]
+        public static double Factorial(int number)
         {
-            // NOTE: Extension method
-            // Query methods should return some data that is derivable from a main input object on which they operate upon. 
-            // For this reason, they are to be written as extension methods (using the `this` keyword on the first input).
-
-            // This method will appear in every UI (e.g. Grasshopper) as a component.
-            // Find it using the CTRL+Shift+B search bar, or by navigating the `Create` component (Engine tab) right click menu.
-            return exampleObject.SomeStringProperty + exampleObject.SomeNumberProperty.ToString() + additionalInput;
+            if (number < 0)
+            {
+                BH.Engine.Base.Compute.RecordError("Number must be greater than or equal to 0.");
+            }
+            if (number > 170)
+            {
+                BH.Engine.Base.Compute.RecordWarning("Factorial is too large, and will overflow.");
+            }
+            return MathNet.Numerics.SpecialFunctions.Factorial(number);
         }
-
-        /***************************************************/
 
     }
 }
