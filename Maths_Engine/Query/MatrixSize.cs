@@ -35,17 +35,35 @@ namespace BH.Engine.Maths
     {
         [Description("Returns the number of coloumns in a matrix")]
         [Input("Matrix", "A Matrix")]
-        [Output("Coloumns", "The number of coloumns in a matrix")]
-        public static bool IsAddable(this Matrix M1, Matrix M2)
+        [MultiOutput(0,"n", "The number of coloumns in a matrix")]
+        [MultiOutput(1,"m", "The number of rows in a matrix")]
+        public static Output<int,int> MatrixSize(this Matrix mat)
         {
-            if ((MatrixNumberOfColumns(M2) == MatrixNumberOfColumns(M1)) && (MatrixNumberOfRows(M1) == MatrixNumberOfRows(M2)))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            Output<int, int> output = new Output<int,int>();
+
+            output.Item1 = MatrixNumberOfColumns(mat);
+            output.Item2 = MatrixNumberOfRows(mat);
+
+            return output;
+
+        }
+
+        [Description("Returns the number of coloumns in a matrix")]
+        [Input("Matrix", "A Matrix")]
+        [Output("Coloumns", "The number of coloumns in a matrix")]
+        public static int MatrixNumberOfColumns(this Matrix mat)
+        {
+            int cols = mat.Values.Count();
+            return cols;
+        }
+
+        [Description("Returns the number of coloumns in a matrix")]
+        [Input("Matrix", "A Matrix")]
+        [Output("Rows", "The number of coloumns in a matrix")]
+        public static int MatrixNumberOfRows(this Matrix mat)
+        {
+            int rows = mat.Values[0].Count();
+            return rows;
         }
 
     }

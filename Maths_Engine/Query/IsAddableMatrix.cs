@@ -20,7 +20,6 @@
  * along with this code. If not, see <https://www.gnu.org/licenses/lgpl-3.0.html>.      
  */
 
-
 using BH.oM.Base;
 using BH.oM.Base.Attributes;
 using BH.oM.Maths;
@@ -28,6 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace BH.Engine.Maths
 {
@@ -35,11 +35,17 @@ namespace BH.Engine.Maths
     {
         [Description("Returns the number of coloumns in a matrix")]
         [Input("Matrix", "A Matrix")]
-        [Output("Rows", "The number of coloumns in a matrix")]
-        public static int MatrixNumberOfRows(this Matrix mat)
+        [Output("Coloumns", "The number of coloumns in a matrix")]
+        public static bool IsAddableMatrix(this Matrix M1, Matrix M2)
         {
-            int rows = mat.Values[0].Count();
-            return rows;
+            if ((MatrixNumberOfColumns(M2) == MatrixNumberOfColumns(M1)) && (MatrixNumberOfRows(M1) == MatrixNumberOfRows(M2)))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }
