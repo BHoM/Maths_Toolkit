@@ -14,6 +14,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Maths_oM\Maths_oM.csproj" />
   </ItemGroup>
 
@@ -22,6 +26,9 @@
       <HintPath>C:\ProgramData\BHoM\Assemblies\BHoM.dll</HintPath>
       <Private>false</Private>
       <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="BHoM_Engine">
+      <HintPath>..\..\..\ProgramData\BHoM\Assemblies\BHoM_Engine.dll</HintPath>
     </Reference>
   </ItemGroup>
 
