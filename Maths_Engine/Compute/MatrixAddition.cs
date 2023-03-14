@@ -40,13 +40,25 @@ namespace BH.Engine.Maths
         [Output("Factorial", "Factorial of the integer")]
         public static Matrix Addtion(this Matrix M1, Matrix M2)
         {
-            if (BH.Engine.Maths.Query.IsAddableMatrix(M1, M2) == false)
+            if (BH.Engine.Maths.Query.IsAddable(M1, M2) == false)
             {
-                BH.Engine.Base.Compute.RecordError("Number must be greater than or equal to 0.");
+                BH.Engine.Base.Compute.RecordError("These matrices are not the same size");
             }
 
-            //return MathNet.Numerics.SpecialFunctions.Factorial(2);
-            return null;
+            Matrix sum = new Matrix();
+
+            
+            for (int i = 0; i < M1.Values.Count(); i++)
+            {
+                List<double> currentRow = new List<double>();
+                for (int j = 0; j < M1.Values.Count(); j++)
+                {
+                    currentRow[j] = M1.Values[i][j] + M2.Values[i][j];
+                }
+                sum.Values.Add(currentRow);
+            }
+
+            return sum;
         }
 
     }
