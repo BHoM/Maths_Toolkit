@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace BH.Tests.Maths
 {
-    [TestFixture]
     public class FactorialTests
     {
         [SetUp]
