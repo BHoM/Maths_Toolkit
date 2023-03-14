@@ -36,7 +36,7 @@ namespace BH.Engine.Maths
     {
 
         [Description("Creates an empty matrix")]
-        [Input("Size", "Integer greater than or equal to 1.")]
+        [Input("size", "Integer greater than or equal to 1.")]
         [Output("EmptyMatrix", "Factorial of the integer")]
         public static Matrix NullMatrix(this int size)
         {
@@ -56,7 +56,7 @@ namespace BH.Engine.Maths
         }
 
         [Description("Creates an empty matrix")]
-        [Input("Size", "Integer greater than or equal to 1.")]
+        [Input("size", "Integer greater than or equal to 1.")]
         [Output("IdentityMatrix", "IdentityMatrix")]
         public static Matrix IdentityMatrix(this int size)
         {

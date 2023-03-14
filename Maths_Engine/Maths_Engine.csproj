@@ -29,6 +29,8 @@
     </Reference>
     <Reference Include="BHoM_Engine">
       <HintPath>C:\ProgramData\BHoM\Assemblies\BHoM_Engine.dll</HintPath>
+		<Private>false</Private>
+		<SpecificVersion>false</SpecificVersion>
     </Reference>
   </ItemGroup>
 
