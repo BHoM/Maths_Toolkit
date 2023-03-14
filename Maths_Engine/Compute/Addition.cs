@@ -35,17 +35,17 @@ namespace BH.Engine.Maths
     public static partial class Compute
     {
 
-        [Description("Computes the factorial of an integer accurately up until 170 where it will overflow.")]
-        [Input("Int", "Integer greater than or equal to 1.")]
-        [Output("Factorial", "Factorial of the integer")]
-        public static Matrix Addtion(this Matrix M1, Matrix M2)
+        //[Description("Computes the factorial of an integer accurately up until 170 where it will overflow.")]
+        //[Input("Int", "Integer greater than or equal to 1.")]
+        //[Output("Factorial", "Factorial of the integer")]
+        public static Matrix Addtion(this Matrix m1, Matrix m2)
         {
-            if (M1.IsValid() == false || M2.IsValid() == false)
+            if (m1.IsValid() == false || m2.IsValid() == false)
             {
                 BH.Engine.Base.Compute.RecordError("These are not all valid matrices.");
                 return null;
             }
-            if (BH.Engine.Maths.Query.CompareElements(M1, M2) == false)
+            if (BH.Engine.Maths.Query.CompareElements(m1, m2) == false)
             {
                 BH.Engine.Base.Compute.RecordError("These matrices are not the same size.");
                 return null;
@@ -54,12 +54,12 @@ namespace BH.Engine.Maths
             Matrix sum = new Matrix();
 
             
-            for (int i = 0; i < M1.Values.Count(); i++)
+            for (int i = 0; i < m1.Values.Count(); i++)
             {
                 List<double> currentRow = new List<double>();
-                for (int j = 0; j < M1.Values.Count(); j++)
+                for (int j = 0; j < m1.Values.Count(); j++)
                 {
-                    currentRow.Add(M1.Values[i][j] + M2.Values[i][j]);
+                    currentRow.Add(m1.Values[i][j] + m2.Values[i][j]);
                 }
                 sum.Values.Add(currentRow);
             }

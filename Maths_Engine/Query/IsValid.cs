@@ -35,7 +35,7 @@ namespace BH.Engine.Maths
     public static partial class Query
     {
         [Description("Checks if the matrix is valid")]
-        [Input("Matrix", "A Matrix")]
+        [Input("mat", "A Matrix")]
         [Output("IsValid", "The number of coloumns in a matrix")]
         public static bool IsValid(this Matrix mat)
         {

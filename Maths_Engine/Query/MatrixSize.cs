@@ -34,23 +34,23 @@ namespace BH.Engine.Maths
     public static partial class Query
     {
         [Description("Returns the number of coloumns in a matrix")]
-        [Input("Matrix", "A Matrix")]
-        [MultiOutput(0,"n", "The number of coloumns in a matrix")]
-        [MultiOutput(1,"m", "The number of rows in a matrix")]
+        [Input("mat", "A Matrix")]
+        [MultiOutput(0, "n", "The number of coloumns in a matrix")]
+        [MultiOutput(1, "m", "The number of rows in a matrix")]
         public static Output<int,int> MatrixSize(this Matrix mat)
         {
             Output<int, int> output = new Output<int,int>();
 
-            output.Item1 = MatrixNumberOfColumns(mat);
-            output.Item2 = MatrixNumberOfRows(mat);
+            output.Item1 = MatrizSizeColoumns(mat);
+            output.Item2 = MatrizSizeRows(mat);
 
             return output;
         }
 
         [Description("Returns the number of coloumns in a matrix")]
-        [Input("Matrix", "A Matrix")]
+        [Input("mat", "A Matrix")]
         [Output("Coloumns", "The number of coloumns in a matrix")]
-        public static int MatrixNumberOfRows(this Matrix mat)
+        public static int MatrizSizeRows(this Matrix mat)
         {
             if (mat.IsValid() == false)
             {
@@ -62,9 +62,9 @@ namespace BH.Engine.Maths
         }
 
         [Description("Returns the number of coloumns in a matrix")]
-        [Input("Matrix", "A Matrix")]
+        [Input("mat", "A Matrix")]
         [Output("Rows", "The number of coloumns in a matrix")]
-        public static int MatrixNumberOfColumns(this Matrix mat)
+        public static int MatrizSizeColoumns(this Matrix mat)
         {
             if (mat.IsValid() == false)
             {

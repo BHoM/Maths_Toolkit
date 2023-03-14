@@ -33,13 +33,13 @@ namespace BH.Engine.Maths
 {
     public static partial class Query
     {
-        [Description("Returns the number of coloumns in a matrix")]
-        [Input("Matrix", "A Matrix")]
-        [Output("Coloumns", "The number of coloumns in a matrix")]
-        public static bool CompareElements(this Matrix M1, Matrix M2)
+        //[Description("Returns the number of coloumns in a matrix")]
+        //[Input("Matrix", "A Matrix")]
+        //[Output("Coloumns", "The number of coloumns in a matrix")]
+        public static bool CompareElements(this Matrix m1, Matrix m2)
         {
             //Change this!
-            if ((MatrixNumberOfColumns(M2) == MatrixNumberOfColumns(M1)) && (MatrixNumberOfRows(M1) == MatrixNumberOfRows(M2)))
+            if ((MatrizSizeColoumns(m2) == MatrizSizeColoumns(m1)) && (MatrizSizeRows(m1) == MatrizSizeRows(m2)))
             {
                 return true;
             }
