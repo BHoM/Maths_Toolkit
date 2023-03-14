@@ -20,40 +20,68 @@
 // * along with this code. If not, see <https://www.gnu.org/licenses/lgpl-3.0.html>.      
 // */
 
-//using BH.oM.Base;
+using BH.oM.Base;
 
-//using BH.oM.Base.Attributes;
-//using System;
-//using System.Collections.Generic;
-//using System.ComponentModel;
-//using System.Linq;
-//using MathNet.Numerics;
-//using BH.oM.Maths;
+using BH.oM.Base.Attributes;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using MathNet.Numerics;
+using BH.oM.Maths;
 
-//namespace BH.Engine.Maths
-//{
-//    public static partial class Create
-//    {
+namespace BH.Engine.Maths
+{
+    public static partial class Create
+    {
 
-//        [Description("Creates an empty matrix")]
-//        [Input("Int", "Integer greater than or equal to 1.")]
-//        [Output("Factorial", "Factorial of the integer")]
-//        public static Matrix EmptyMatrix(this int size)
-//        {
-//            Matrix id = new Matrix();
+        [Description("Creates an empty matrix")]
+        [Input("Size", "Integer greater than or equal to 1.")]
+        [Output("EmptyMatrix", "Factorial of the integer")]
+        public static Matrix NullMatrix(this int size)
+        {
+            Matrix id = new Matrix();
 
-//            for (int i = 0; i < size; i++)
-//            {
-//                List<double> row = new List<double>();
-//                for (int j = 0; j < size; j++)
-//                {
-                    
-//                }
-//            }
+            for (int i = 0; i < size; i++)
+            {
+                List<double> row = new List<double>();
+                for (int j = 0; j < size; j++)
+                {
+                    row.Add(0);
+                }
+                id.Values.Add(row);
+            }
 
-//            return result;
-//        }
+            return id;
+        }
 
-//    }
-//}
+        [Description("Creates an empty matrix")]
+        [Input("Size", "Integer greater than or equal to 1.")]
+        [Output("IdentityMatrix", "IdentityMatrix")]
+        public static Matrix IdentityMatrix(this int size)
+        {
+            Matrix id = new Matrix();
+
+            for (int i = 0; i < size; i++)
+            {
+                List<double> row = new List<double>();
+                for (int j = 0; j < size; j++)
+                {
+                    if (i == j)
+                    {
+                        row.Add(1);
+                    }
+                    else
+                    {
+                        row.Add(0);
+                    }
+                }
+                id.Values.Add(row);
+            }
+
+            return id;
+        }
+
+    }
+}
 
