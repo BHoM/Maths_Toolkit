@@ -41,8 +41,8 @@ namespace BH.Engine.Maths
         {
             Output<int, int> output = new Output<int,int>();
 
-            output.Item1 = MatrizSizeColoumns(mat);
-            output.Item2 = MatrizSizeRows(mat);
+            output.Item1 = MatrixSizeColumns(mat);
+            output.Item2 = MatrixSizeRows(mat);
 
             return output;
         }
@@ -50,7 +50,7 @@ namespace BH.Engine.Maths
         [Description("Returns the number of coloumns in a matrix")]
         [Input("mat", "A Matrix")]
         [Output("Coloumns", "The number of coloumns in a matrix")]
-        public static int MatrizSizeRows(this Matrix mat)
+        public static int MatrixSizeRows(this Matrix mat)
         {
             if (mat.IsValid() == false)
             {
@@ -64,7 +64,7 @@ namespace BH.Engine.Maths
         [Description("Returns the number of coloumns in a matrix")]
         [Input("mat", "A Matrix")]
         [Output("Rows", "The number of coloumns in a matrix")]
-        public static int MatrizSizeColoumns(this Matrix mat)
+        public static int MatrixSizeColumns(this Matrix mat)
         {
             if (mat.IsValid() == false)
             {
