@@ -43,6 +43,7 @@ namespace BH.Engine.Maths
             if (BH.Engine.Maths.Query.IsAddable(M1, M2) == false)
             {
                 BH.Engine.Base.Compute.RecordError("These matrices are not the same size");
+                return null;
             }
 
             Matrix sum = new Matrix();
