@@ -57,7 +57,7 @@ namespace BH.Engine.Maths
                 BH.Engine.Base.Compute.RecordError("This is not a valid matrix.");
                 return -1;
             }
-            int cols = mat.Values[0].Count();
+            int cols = mat.Values.Count();
             return cols;
         }
 
@@ -71,7 +71,7 @@ namespace BH.Engine.Maths
                 BH.Engine.Base.Compute.RecordError("This is not a valid matrix.");
                 return -1;
             }
-            int rows = mat.Values.Count();
+            int rows = mat.Values[0].Count();
             return rows;
         }
 

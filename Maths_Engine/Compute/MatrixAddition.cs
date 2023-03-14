@@ -42,7 +42,7 @@ namespace BH.Engine.Maths
         {
             if (M1.IsValid() == false || M2.IsValid() == false)
             {
-                BH.Engine.Base.Compute.RecordError("These are not all valid matrices");
+                BH.Engine.Base.Compute.RecordError("These are not all valid matrices.");
                 return null;
             }
             if (BH.Engine.Maths.Query.CompareElements(M1, M2) == false)
