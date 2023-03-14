@@ -40,9 +40,14 @@ namespace BH.Engine.Maths
         [Output("Factorial", "Factorial of the integer")]
         public static Matrix Addtion(this Matrix M1, Matrix M2)
         {
-            if (BH.Engine.Maths.Query.IsAddable(M1, M2) == false)
+            if (M1.IsValid() == false || M2.IsValid() == false)
             {
-                BH.Engine.Base.Compute.RecordError("These matrices are not the same size");
+                BH.Engine.Base.Compute.RecordError("These are not all valid matrices");
+                return null;
+            }
+            if (BH.Engine.Maths.Query.CompareElements(M1, M2) == false)
+            {
+                BH.Engine.Base.Compute.RecordError("These matrices are not the same size.");
                 return null;
             }
 
